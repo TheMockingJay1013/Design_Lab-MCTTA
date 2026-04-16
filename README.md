@@ -23,7 +23,7 @@ Large assets are **excluded** from this repository (see [.gitignore](.gitignore)
 | Asset | How to obtain |
 |--------|----------------|
 | **UCF-HMDB_full** (or full processed `data_root` tree) | **Google Drive (add your link here):** `________________________` |
-| **I3D Kinetics** RGB / flow checkpoints (`rgb_kinetics.pt`, `flow_kinetics.pt`) | Same Drive bundle, or follow [docs/I3D_PRETRAINING.md](docs/I3D_PRETRAINING.md) and [scripts/convert_kinetics_i3d_to_pytorch.py](scripts/convert_kinetics_i3d_to_pytorch.py) |
+| **I3D Kinetics** RGB / flow checkpoints (`rgb_kinetics.pt`, `flow_kinetics.pt`) | Follow [docs/I3D_PRETRAINING.md](docs/I3D_PRETRAINING.md) and [scripts/convert_kinetics_i3d_to_pytorch.py](scripts/convert_kinetics_i3d_to_pytorch.py) |
 | **Source checkpoint** after pretraining | Run pretraining below; output is written to `./checkpoints/` (local only) |
 
 **Expected `data_root` layout** (used by [data/video_dataset.py](data/video_dataset.py)):
