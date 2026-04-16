@@ -1,0 +1,38 @@
+# Large / private assets (not tracked)
+downloads/
+checkpoints/
+pretrained/
+# Benchmark video trees under data/ (keep data/*.py package tracked)
+data/ucf_hmdb_full/
+data/ucf_hmdb_small/
+data/ucf_olympic/
+data/epic_kitchens/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Tests / tools
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs / local runs
+runs/
+*.log

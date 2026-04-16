@@ -1,0 +1,56 @@
+# Conservative adaptation — use when paper-default λ blows up loss / hurts student acc.
+# Run: python scripts/adapt.py --config config/adapt_stable.yaml ...
+
+model:
+  backbone: i3d
+  feature_dim: 1024
+  hidden_dim: 1024
+  dropout: 0.5
+
+data:
+  num_clips: 10
+  clip_len: 8
+  resolution: 224
+  flow_method: tvl1
+
+pretrain:
+  epochs: 30
+  batch_size: 8
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 1.0e-4
+  scheduler: cosine
+  early_stop_patience: 5
+
+adaptation:
+  lr: 0.001
+  momentum: 0.9
+  weight_decay: 1.0e-4
+  batch_size: 1
+  accum_steps: 64
+  alpha: 0.3
+  beta: 0.6
+  top_k: 5
+  lambda1: 0.2
+  lambda2: 0.1
+  gamma: 0.995
+  max_bank_per_class: 512
+  shuffle_target: false
+  normalize_l_ma: true
+  grad_clip_norm: 1.0
+
+ssfr:
+  pairwise_metric: cosine_distance
+  entropy_mode: low_entropy_threshold
+
+datasets:
+  ucf_hmdb_small:
+    num_classes: 5
+  ucf_hmdb_full:
+    num_classes: 12
+  ucf_olympic:
+    num_classes: 6
+  epic_kitchens:
+    num_classes: 8
+
+seed: 42
